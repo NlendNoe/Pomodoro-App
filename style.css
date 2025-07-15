@@ -1,0 +1,42 @@
+body{
+    text-align: center;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    background-color: black;
+    margin-top: 8rem;
+}
+
+#display{
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+
+}
+
+#timer{
+    font-size: 8rem;
+    margin: 4rem;
+    border: 5px solid white;
+    border-radius: 30px;
+}
+
+button{
+    width: 230px;
+    height: 45px;
+    color: white;
+    background-color: black;
+    border: 3px solid white;
+    margin: 1rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button:hover{
+    color: black;
+    background-color: white;
+    font-weight: 600;
+    transition: .5s ease-in-out;
+}
