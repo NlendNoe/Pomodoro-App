@@ -6,14 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pomodoro</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
-    <p id="display">Vous devez travailler !🧐</p>
-    
-    <div id="timer">25:00</div>
-    <button id="start">Début</button>
-    <button id="reset">Recommencer</button>
+    <h1>STAY FOCUS</h1>
+    <p id="display">Temps de concentration</p>
+    <div class="time-container">
+        <div id="timer">25:00</div>
+        <div id="pause-timer"></div>
+    </div>
+
+
+
+    <div id="session">
+        <div class="session-special">
+            <div class="session-name">Sessions complétées</div>
+            <div class="session-number">0</div>
+        </div>
+
+        <button id="start">Début</button>
+        <button id="reset">Recommencer</button>
+    </div>
 
     <script src="app.js"></script>
 </body>
