@@ -6,12 +6,10 @@ body {
 }
 
 #timer {
-    font-size: 15rem;
-    font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
+    font-size: 12rem;
     font-weight: 600;
     color: rgb(46, 3, 3);
-    margin: 3rem;
+    margin: 3rem 0;
 }
 
 #display {
@@ -22,9 +20,11 @@ body {
 
 #session {
     display: flex;
-    justify-content: space-around;
-    width: 70%;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     margin: 0 auto;
+    gap: 2rem;
 }
 
 .session-special {
@@ -35,6 +35,7 @@ body {
     color: white;
     padding: 2.2rem;
     border-radius: 10px;
+    margin-bottom: 2rem;
 }
 
 .session-number {
@@ -43,20 +44,31 @@ body {
     padding-top: .5rem;
 }
 
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
 button {
-    width: 15%;
+    flex: 1 1 0;
+    min-width: 160px;
+    max-width: 220px;
     cursor: pointer;
     font-size: 1.1rem;
-    text-align: center;
     color: azure;
     background-color: rgb(120, 32, 32);
     border: none;
     border-radius: 10px;
     font-weight: 600;
+    padding: 1.2rem 0;
+    transition: all 0.3s ease;
+    margin-top: -2rem;
 }
 
 #reset {
-    margin-left: -12rem;
     background-color: rgb(189, 73, 73);
 }
 
@@ -64,88 +76,79 @@ button {
     background-color: rgb(255, 255, 255);
     color: rgb(189, 73, 73);
     border: 2px solid rgb(189, 73, 73);
-    transition: all 0.5s ease;
 }
 
 #start:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(120, 32, 32);
     border: 2px solid rgb(120, 32, 32);
-    transition: all 0.5s ease;
 }
 
-@media (max-width: 1000px) {
+#skip:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(120, 32, 32);
+    border: 2px solid rgb(120, 32, 32);
+}
+#skip {
+    background-color: rgb(189, 46, 46);
+}
+
+@media (max-width: 900px) {
     #timer {
         font-size: 6rem;
-        margin: 1.5rem 0;
-        margin-bottom: 4rem;
+        margin: 2rem 0;
     }
-    #session {
-        flex-direction: column;
-        align-items: center;
-        width: 95%;
+
+    #display {
+        font-size: 1.2rem;
+        transform: translateY(20px);
     }
-    button {
-        width: 33%;
+
+    .session-special {
+        padding: 1rem;
         font-size: 1rem;
-        margin: 1rem 0;
-        padding: 1.9rem;
     }
-    #reset {
-        margin-left: 0;
-        margin-top: .5rem;
+
+    .button-container {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
+        min-width: 120px;
+        font-size: 1rem;
+        padding: 1rem 0;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
+
     #timer {
-        font-size: 8rem;
-        margin: .5rem 0;
-        margin-bottom: 6rem;
+        font-size: 3rem;
+        margin: 1rem 0;
     }
+
     #display {
         font-size: 1rem;
         transform: translateY(10px);
     }
-    .session-special {
-        width: 90%;
-        padding: 1rem;
-    }
-    button {
-        width: 90%;
-        font-size: 0.9rem;
-        padding: 1rem;
-    }
-    #session {
-        width: 100%;
-    }
-}
 
-@media (min-width: 1001px) and (max-width: 1500px) {
-    #start {
-        margin-left: -100px;
+    .session-special {
+        width: 95%;
+        padding: 0.7rem;
     }
+
     button {
-        width: 20%;
-        font-size: 1.1rem;
-        padding: 2rem;
-    }
-    #session {
-        width: 60%;
-    }
-}
-@media (min-width: 900px) {
-    button {
-        min-width: 200px;
-        font-size: 1.2rem;
-        padding: 2rem 0.5rem;
-        
-    }
-    #session{
-        width: 60%;
-        gap: 4rem;
+        width: 100%;
+        min-width: 100px;
+        font-size: 0.9rem;
+        padding: 0.7rem 0;
     }
 }
