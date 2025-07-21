@@ -25,6 +25,7 @@ body {
     width: 100%;
     margin: 0 auto;
     gap: 2rem;
+
 }
 
 .session-special {
@@ -68,11 +69,11 @@ button {
     margin-top: -2rem;
 }
 
-#reset {
+#skipSession {
     background-color: rgb(189, 73, 73);
 }
 
-#reset:hover {
+#skipSession:hover {
     background-color: rgb(255, 255, 255);
     color: rgb(189, 73, 73);
     border: 2px solid rgb(189, 73, 73);
@@ -89,8 +90,37 @@ button {
     color: rgb(120, 32, 32);
     border: 2px solid rgb(120, 32, 32);
 }
+
 #skip {
     background-color: rgb(189, 46, 46);
+}
+
+.flex-item {
+    display: flex;
+    gap: 2rem;
+}
+
+#reset {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid rgb(0, 0, 0);
+    height: 65px;
+    width: 65px;
+    padding: 0;
+    border-radius: 50%;
+    margin-top: 1rem;
+    background: none;
+    position: relative;
+    cursor: pointer;
+}
+
+#reset img {
+    display: block;
+    margin: 0;
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
 }
 
 @media (max-width: 900px) {
@@ -123,6 +153,34 @@ button {
         padding: 1rem 0;
         margin: 0 auto;
     }
+
+    #reset {
+        width: 50px;
+        height: 50px;
+        border-width: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border-radius: 50%;
+        margin: 1rem auto 0 auto;
+        background: none;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.5s, border-color 0.5s;
+    }
+    #reset img {
+        width: 28px;
+        height: 28px;
+        margin: 0;
+        display: block;
+        object-fit: contain;
+        transition: transform 0.5s;
+    }
+    #reset:hover {
+        background-color: rgb(255, 255, 255);
+        animation: rotation 1s;
+    }
 }
 
 @media (max-width: 600px) {
@@ -145,10 +203,62 @@ button {
         padding: 0.7rem;
     }
 
+    .button-container {
+        align-items: center;
+        justify-content: center;
+    }
+
     button {
         width: 100%;
         min-width: 100px;
         font-size: 0.9rem;
         padding: 0.7rem 0;
     }
+
+    #reset {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
+        border-width: 2px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 1rem auto 0 auto;
+        padding: 0;
+        border-radius: 50%;
+        box-sizing: border-box;
+        background: none;
+        position: relative;
+        cursor: pointer;
+        transition: background-color 0.5s, border-color 0.5s;
+    }
+    #reset img {
+        width: 18px;
+        height: 18px;
+        margin: 0;
+        display: block;
+        object-fit: contain;
+        transition: transform 0.5s;
+    }
+    #reset:hover {
+        background-color: rgb(255, 255, 255);
+        animation: rotation 1s;
+    }
+}
+
+#reset:hover {
+    background-color: rgb(255, 255, 255);
+    animation: rotation 1s;
+}
+
+#reset img {
+    transition: transform 0.5s;
+}
+
+@keyframes rotation {
+    0% { transform: rotate(90deg);}
+    100%{transform: rotate(-360deg);}
 }

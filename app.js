@@ -1,13 +1,14 @@
 const display = document.getElementById("display");
 const timerPomo = document.getElementById("timer");
 const start = document.getElementById("start");
-const reset = document.getElementById("reset");
+const skipSession = document.getElementById("skipSession");
 const pauseTimer = document.querySelector("#pause-timer");
 const sessionNumber = document.querySelector('.session-number');
-const TEMPS_TRAVAIL = 25 * 60;
-const PETITE_PAUSE = 5 * 60;
-const LONGUE_PAUSE = 30 * 60;
-const INCREMENT_PAUSE = 5 * 60;
+const reset = document.getElementById("reset");
+const TEMPS_TRAVAIL = .25 * 60;
+const PETITE_PAUSE = .5 * 60;
+const LONGUE_PAUSE = .30 * 60;
+const INCREMENT_PAUSE = .5 * 60;
 const sikpPause = document.querySelector('#skip');
 
 let dureeActuelle = TEMPS_TRAVAIL;
@@ -84,29 +85,40 @@ start.addEventListener("click", () => {
     }
 });
 
-reset.addEventListener("click", () => {
-    clearInterval(timer);
-    isWorkSession = true;
-    sessionsCompleted = 0;
-    demarrerSession();
-    start.textContent = "Début";
-    tempsEnCours = false;
-    display.textContent = "Prêt à travailler! 🧐";
-    sessionNumber.textContent = sessionsCompleted;
-});
+skipSession.addEventListener("click", () =>{
+    if(isWorkSession && tempsEnCours){
+        clearInterval(timer)
+        isWorkSession = false
+        demarrerSession()
+        start.textContent = "Pause"
+        tempsEnCours = true
+        lancerTimer()
+        display.textContent = "Attention pas de triche !😑"
+    }
+})
 
 sikpPause.addEventListener("click", () => {
     if (!isWorkSession && tempsEnCours) {
         clearInterval(timer);
         isWorkSession = true;
         demarrerSession();
-        start.textContent = "Début";
-        tempsEnCours = false;
+        start.textContent = "Pause";
+        tempsEnCours = true;
+        lancerTimer();
     }
 });
 
-demarrerSession();
+reset.addEventListener("click", () => {
+    clearInterval(timer);
+    isWorkSession = true;
+    sessionsCompleted = 0;
+    tempsEnCours = false;
+    start.textContent = "Début";
+    display.textContent = "Pomodoro";
+    pauseTimer.style.display = "none";
+    sessionNumber.textContent = sessionsCompleted;
+    demarrerSession();
+    
+})
 
-// a jouter
-// 1. Ajouter une fonctionnalute qui permet de sauter les pauses et passer direct a une autre session de travail
-//2.Faire de telle sorte que le timer reprend automatiquement apres la fin de la pause
+demarrerSession();
