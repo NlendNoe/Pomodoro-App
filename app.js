@@ -5,10 +5,10 @@ const skipSession = document.getElementById("skipSession");
 const pauseTimer = document.querySelector("#pause-timer");
 const sessionNumber = document.querySelector('.session-number');
 const reset = document.getElementById("reset");
-const TEMPS_TRAVAIL = .25 * 60;
-const PETITE_PAUSE = .5 * 60;
-const LONGUE_PAUSE = .30 * 60;
-const INCREMENT_PAUSE = .5 * 60;
+const TEMPS_TRAVAIL = 25 * 60;
+const PETITE_PAUSE = 5 * 60;
+const LONGUE_PAUSE = 30 * 60;
+const INCREMENT_PAUSE = 5 * 60;
 const sikpPause = document.querySelector('#skip');
 
 let dureeActuelle = TEMPS_TRAVAIL;
